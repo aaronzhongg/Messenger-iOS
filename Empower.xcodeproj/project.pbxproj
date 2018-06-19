@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		93DB5CAB20D8A6680060CDFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CAA20D8A6680060CDFD /* AppDelegate.swift */; };
-		93DB5CAD20D8A6680060CDFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CAC20D8A6680060CDFD /* ViewController.swift */; };
+		93DB5CAD20D8A6680060CDFD /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CAC20D8A6680060CDFD /* LogInViewController.swift */; };
 		93DB5CB020D8A6680060CDFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DB5CAE20D8A6680060CDFD /* Main.storyboard */; };
 		93DB5CB220D8A66B0060CDFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DB5CB120D8A66B0060CDFD /* Assets.xcassets */; };
 		93DB5CB520D8A66C0060CDFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DB5CB320D8A66C0060CDFD /* LaunchScreen.storyboard */; };
+		93DB5CC220D8B0F60060CDFD /* UserDetailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CC120D8B0F60060CDFD /* UserDetailRegisterViewController.swift */; };
+		93DB5CC420D8C6A40060CDFD /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CC320D8C6A40060CDFD /* UITextFieldExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		93DB5CA720D8A6680060CDFD /* Empower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Empower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DB5CAA20D8A6680060CDFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93DB5CAC20D8A6680060CDFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		93DB5CAC20D8A6680060CDFD /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		93DB5CAF20D8A6680060CDFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93DB5CB120D8A66B0060CDFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93DB5CB420D8A66C0060CDFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93DB5CB620D8A66C0060CDFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93DB5CC120D8B0F60060CDFD /* UserDetailRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRegisterViewController.swift; sourceTree = "<group>"; };
+		93DB5CC320D8C6A40060CDFD /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,40 @@
 		93DB5CA920D8A6680060CDFD /* Empower */ = {
 			isa = PBXGroup;
 			children = (
-				93DB5CAA20D8A6680060CDFD /* AppDelegate.swift */,
-				93DB5CAC20D8A6680060CDFD /* ViewController.swift */,
-				93DB5CAE20D8A6680060CDFD /* Main.storyboard */,
-				93DB5CB120D8A66B0060CDFD /* Assets.xcassets */,
-				93DB5CB320D8A66C0060CDFD /* LaunchScreen.storyboard */,
+				93DB5CBC20D8AF490060CDFD /* Controller */,
+				93DB5CBD20D8AF580060CDFD /* View */,
+				93DB5CBE20D8AF620060CDFD /* Supporting Files */,
 				93DB5CB620D8A66C0060CDFD /* Info.plist */,
+				93DB5CAA20D8A6680060CDFD /* AppDelegate.swift */,
 			);
 			path = Empower;
+			sourceTree = "<group>";
+		};
+		93DB5CBC20D8AF490060CDFD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				93DB5CAC20D8A6680060CDFD /* LogInViewController.swift */,
+				93DB5CC120D8B0F60060CDFD /* UserDetailRegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		93DB5CBD20D8AF580060CDFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93DB5CAE20D8A6680060CDFD /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		93DB5CBE20D8AF620060CDFD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				93DB5CB120D8A66B0060CDFD /* Assets.xcassets */,
+				93DB5CB320D8A66C0060CDFD /* LaunchScreen.storyboard */,
+				93DB5CC320D8C6A40060CDFD /* UITextFieldExtension.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93DB5CAD20D8A6680060CDFD /* ViewController.swift in Sources */,
+				93DB5CC420D8C6A40060CDFD /* UITextFieldExtension.swift in Sources */,
+				93DB5CAD20D8A6680060CDFD /* LogInViewController.swift in Sources */,
 				93DB5CAB20D8A6680060CDFD /* AppDelegate.swift in Sources */,
+				93DB5CC220D8B0F60060CDFD /* UserDetailRegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
