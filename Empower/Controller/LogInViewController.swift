@@ -31,7 +31,7 @@ class LogInViewController: UIViewController {
 
 
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        if let registerPageVC = storyboard?.instantiateViewController(withIdentifier: "UserDetailRegisterVC") as? UserDetailRegisterViewController {
+        if let registerPageVC = storyboard?.instantiateViewController(withIdentifier: "UserDetailRegisterVC") as? RegisterViewController {
             present(registerPageVC, animated: true, completion: nil)
         }
         

@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.26600985221674"/>
         </scene>
-        <!--User Detail Register View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="lwV-6b-Jks">
             <objects>
-                <viewController storyboardIdentifier="UserDetailRegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cdn-Zz-Zjr" customClass="UserDetailRegisterViewController" customModule="Empower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserDetailRegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cdn-Zz-Zjr" customClass="RegisterViewController" customModule="Empower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nMh-Oq-rky">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,6 +170,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="Cdn-Zz-Zjr" eventType="touchUpInside" id="RVl-kd-mGw"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ghe-Kx-B4d">
                                 <rect key="frame" x="16" y="163" width="343" height="45"/>
@@ -230,7 +233,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="xButtonPressed:" destination="Cdn-Zz-Zjr" eventType="touchUpInside" id="nzd-ht-3Wz"/>
+                                    <action selector="exitButtonPressed:" destination="Cdn-Zz-Zjr" eventType="touchUpInside" id="DO6-Z5-T98"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1y-y7-xzw">

@@ -1,5 +1,5 @@
 //
-//  UserDetailRegisterViewController.swift
+//  RegisterViewController.swift
 //  Empower
 //
 //  Created by Aaron Zhong on 19/06/18.
@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import SVProgressHUD
 
-class UserDetailRegisterViewController: UIViewController {
+class RegisterViewController: UIViewController {
     
     // UI
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -42,10 +44,10 @@ class UserDetailRegisterViewController: UIViewController {
         cancelButton.clipsToBounds = true
     }
     
-    @IBAction func xButtonPressed(_ sender: UIButton) {
+    @IBAction func exitButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
+
     @IBAction func dateOfBirthTextFieldPressed(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.date
@@ -60,6 +62,31 @@ class UserDetailRegisterViewController: UIViewController {
         dateOfBirthTextField.text = dateFormatter.string(from: sender.date)
     }
     
+    @IBAction func registerButtonPressed(_ sender: UIButton) {
+        SVProgressHUD.show()
+        
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
+            SVProgressHUD.dismiss()
+            
+            if error != nil {
+                let alert = UIAlertController(title: "Oops!", message: error?.localizedDescription, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    
+                self.present(alert, animated: true)
+            } else {
+                let alert = UIAlertController(title: "You're Registered!", message: "", preferredStyle: .alert)
+                
+                self.present(alert, animated: true)
+                
+                let timeToDismiss = DispatchTime.now() + 2
+                DispatchQueue.main.asyncAfter(deadline: timeToDismiss, execute: {
+                    alert.dismiss(animated: true, completion: nil)
+                    self.dismiss(animated: true, completion: nil)
+                })
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 
