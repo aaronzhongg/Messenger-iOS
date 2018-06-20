@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 import SVProgressHUD
 
 class RegisterViewController: UIViewController {
@@ -20,6 +21,9 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
+    
+    // User DB
+    let userDB = Database.database().reference().child("users")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +79,10 @@ class RegisterViewController: UIViewController {
                     
                 self.present(alert, animated: true)
             } else {
+                let user: [String: String] = ["first_name": self.firstNameTextField?.text ?? "", "last_name": self.lastNameTextField?.text ?? "", "username": self.usernameTextField?.text ?? "", "email": self.emailTextField?.text ?? "", "date_of_birth": self.dateOfBirthTextField?.text ?? ""]
+                
+                self.userDB.childByAutoId().setValue(user)
+                
                 let alert = UIAlertController(title: "You're Registered!", message: "", preferredStyle: .alert)
                 
                 self.present(alert, animated: true)
