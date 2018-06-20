@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import SVProgressHUD
 
 class LogInViewController: UIViewController {
 
@@ -28,7 +30,24 @@ class LogInViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        SVProgressHUD.show()
+        
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
+            SVProgressHUD.dismiss()
+            
+            if error != nil {
+                let alert = UIAlertController(title: "Oops!", message: error?.localizedDescription, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true)
+            } else {
+                self.performSegue(withIdentifier: "goToContacts", sender: self)
+            }
+        }
+    }
 
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         if let registerPageVC = storyboard?.instantiateViewController(withIdentifier: "UserDetailRegisterVC") as? RegisterViewController {

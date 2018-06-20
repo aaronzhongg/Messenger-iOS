@@ -15,6 +15,7 @@
 		93DB5CC220D8B0F60060CDFD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CC120D8B0F60060CDFD /* RegisterViewController.swift */; };
 		93DB5CC420D8C6A40060CDFD /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CC320D8C6A40060CDFD /* UITextFieldExtension.swift */; };
 		93DB5CC620D9BB710060CDFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93DB5CC520D9BB700060CDFD /* GoogleService-Info.plist */; };
+		93DB5CCA20DA120C0060CDFD /* ContactsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CC920DA120C0060CDFD /* ContactsCollectionViewController.swift */; };
 		A2A9D05820908A2EFC500DC0 /* Pods_Empower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DB1A4C5FAD536190DF9E1C /* Pods_Empower.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		93DB5CC120D8B0F60060CDFD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		93DB5CC320D8C6A40060CDFD /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		93DB5CC520D9BB700060CDFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93DB5CC920DA120C0060CDFD /* ContactsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				93DB5CAC20D8A6680060CDFD /* LogInViewController.swift */,
 				93DB5CC120D8B0F60060CDFD /* RegisterViewController.swift */,
+				93DB5CC920DA120C0060CDFD /* ContactsCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			files = (
 				93DB5CC420D8C6A40060CDFD /* UITextFieldExtension.swift in Sources */,
 				93DB5CAD20D8A6680060CDFD /* LogInViewController.swift in Sources */,
+				93DB5CCA20DA120C0060CDFD /* ContactsCollectionViewController.swift in Sources */,
 				93DB5CAB20D8A6680060CDFD /* AppDelegate.swift in Sources */,
 				93DB5CC220D8B0F60060CDFD /* RegisterViewController.swift in Sources */,
 			);
