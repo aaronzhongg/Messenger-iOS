@@ -312,7 +312,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="aHx-Fa-hwT" kind="relationship" relationship="rootViewController" id="tAE-XL-7va"/>
+                        <segue destination="5gv-5V-jlM" kind="relationship" relationship="rootViewController" id="p2Y-ag-bFH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q7t-kb-W69" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -320,39 +320,33 @@
             <point key="canvasLocation" x="2789.5999999999999" y="-194.33497536945814"/>
         </scene>
         <!--Contacts-->
-        <scene sceneID="IjB-jA-AL4">
+        <scene sceneID="luV-c6-eg5">
             <objects>
-                <collectionViewController id="aHx-Fa-hwT" customClass="ContactsCollectionViewController" customModule="Empower" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="JIC-1B-MLD">
+                <tableViewController id="5gv-5V-jlM" customClass="ContactsTableViewController" customModule="Empower" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6sU-N0-7g1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bHz-E0-YDL">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Jfv-c7-ebm">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="146" id="cSY-tO-eIM">
+                                <rect key="frame" x="0.0" y="28" width="375" height="146"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cSY-tO-eIM" id="Qwv-AE-WKV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="145.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="aHx-Fa-hwT" id="AI2-KQ-C2D"/>
-                            <outlet property="delegate" destination="aHx-Fa-hwT" id="Crs-8A-OEP"/>
+                            <outlet property="dataSource" destination="5gv-5V-jlM" id="hCV-Vg-rRn"/>
+                            <outlet property="delegate" destination="5gv-5V-jlM" id="00A-Yh-T9X"/>
                         </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Contacts" id="6dT-4P-nHT"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9K5-tz-Xy8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Contacts" id="NXf-4d-MBv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2V9-D2-gF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3732" y="-194"/>
+            <point key="canvasLocation" x="3732" y="-194.33497536945814"/>
         </scene>
         <!--Messages-->
         <scene sceneID="UFO-r5-zkX">
