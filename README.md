@@ -18,3 +18,4 @@ To do
 
 <img src="https://media.giphy.com/media/9zXwYJt2Yp3XXk8rnQ/giphy.gif" width="350">
 
+Icons: https://www.flaticon.com/packs/profession-avatars
