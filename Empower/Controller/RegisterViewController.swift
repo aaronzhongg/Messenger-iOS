@@ -32,6 +32,8 @@ class RegisterViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         
+        scrollView.keyboardDismissMode = .interactive
+        
         configureTextFieldUI()
     }
 
@@ -107,7 +109,7 @@ class RegisterViewController: UIViewController {
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
         
         var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height + 10
+        contentInset.bottom = keyboardFrame.size.height + 20
         scrollView.contentInset = contentInset
     }
     
@@ -115,6 +117,7 @@ class RegisterViewController: UIViewController {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInset
     }
+    
     /*
     // MARK: - Navigation
 

@@ -18,6 +18,13 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        swipeDown.direction = .down
+        view.addGestureRecognizer(swipeDown)
+        
+        let screenTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(screenTap)
+        
         configureUI()
     }
     
@@ -53,8 +60,10 @@ class LogInViewController: UIViewController {
         if let registerPageVC = storyboard?.instantiateViewController(withIdentifier: "UserDetailRegisterVC") as? RegisterViewController {
             present(registerPageVC, animated: true, completion: nil)
         }
-        
-        
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
