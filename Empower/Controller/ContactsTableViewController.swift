@@ -11,7 +11,7 @@ import UIKit
 class ContactsTableViewController: UITableViewController {
 
     let categories = ["Favourites", "Contacts"]
-    let contacts = ["Aaron", "Bobby", "Tarantino", "House man"]
+    let contacts = ["Aaron Zhong", "Bobby", "Tarantino", "Bill Gates", "Richard Hendrix"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +71,14 @@ class ContactsTableViewController: UITableViewController {
         }
         
         return 50
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return categories[section]
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     /*
