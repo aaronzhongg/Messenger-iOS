@@ -131,8 +131,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKf-Vr-MCF">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Let's get you started." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZe-HV-1yk">
-                                                <rect key="frame" x="20" y="79" width="268" height="39"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get you started." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZe-HV-1yk">
+                                                <rect key="frame" x="20" y="79" width="215" height="39"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -243,8 +243,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9C1-Yt-YIm">
-                                                <rect key="frame" x="323" y="79" width="32" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9C1-Yt-YIm">
+                                                <rect key="frame" x="270" y="79" width="30" height="30"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="X">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -262,6 +262,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b1y-y7-xzw" secondAttribute="trailing" constant="20" symbolic="YES" id="1G1-rT-VkI"/>
                                             <constraint firstItem="9C1-Yt-YIm" firstAttribute="top" secondItem="BKf-Vr-MCF" secondAttribute="top" constant="79" id="3cE-N1-M71"/>
                                             <constraint firstAttribute="trailing" secondItem="9C1-Yt-YIm" secondAttribute="trailing" constant="20" id="6HU-Rx-QMb"/>
                                             <constraint firstItem="vjf-WR-iop" firstAttribute="leading" secondItem="BKf-Vr-MCF" secondAttribute="leading" constant="20" id="6Sb-xL-FHA"/>
@@ -277,6 +278,8 @@
                                             <constraint firstItem="Ghe-Kx-B4d" firstAttribute="top" secondItem="LsQ-K1-ndL" secondAttribute="bottom" constant="8" id="Iaz-Vq-fOf"/>
                                             <constraint firstItem="VZe-HV-1yk" firstAttribute="leading" secondItem="BKf-Vr-MCF" secondAttribute="leading" constant="20" id="Ite-Vi-gSx"/>
                                             <constraint firstItem="2IH-D2-lCw" firstAttribute="leading" secondItem="BKf-Vr-MCF" secondAttribute="leading" constant="20" id="JKz-gA-v6k"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vjf-WR-iop" secondAttribute="trailing" constant="20" symbolic="YES" id="Kc4-kO-SVx"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lg9-Kt-vES" secondAttribute="trailing" constant="20" symbolic="YES" id="L0y-Nh-GxU"/>
                                             <constraint firstItem="LsQ-K1-ndL" firstAttribute="top" secondItem="VZe-HV-1yk" secondAttribute="bottom" constant="8" id="NVO-A6-3fp"/>
                                             <constraint firstAttribute="trailing" secondItem="fz5-df-9aL" secondAttribute="trailing" constant="20" id="Ou4-Ti-MrQ"/>
                                             <constraint firstAttribute="trailing" secondItem="yHw-eO-Icg" secondAttribute="trailing" constant="20" id="PxY-dZ-96A"/>
@@ -284,6 +287,8 @@
                                             <constraint firstItem="KEi-9h-y21" firstAttribute="leading" secondItem="BKf-Vr-MCF" secondAttribute="leading" constant="20" id="TCg-Cr-7jV"/>
                                             <constraint firstItem="fz5-df-9aL" firstAttribute="leading" secondItem="BKf-Vr-MCF" secondAttribute="leading" constant="20" id="UQI-Xf-HLL"/>
                                             <constraint firstItem="b1y-y7-xzw" firstAttribute="leading" secondItem="BKf-Vr-MCF" secondAttribute="leading" constant="20" id="Ufh-R8-UsE"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KEi-9h-y21" secondAttribute="trailing" constant="20" symbolic="YES" id="V8p-ub-8fC"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LsQ-K1-ndL" secondAttribute="trailing" constant="20" symbolic="YES" id="Xaa-JL-byo"/>
                                             <constraint firstAttribute="trailing" secondItem="jR2-WY-J9K" secondAttribute="trailing" constant="20" id="XzD-UB-JWP"/>
                                             <constraint firstItem="9cF-vo-Fbw" firstAttribute="top" secondItem="b1y-y7-xzw" secondAttribute="bottom" constant="8" id="a8g-qK-GvB"/>
                                             <constraint firstItem="2IH-D2-lCw" firstAttribute="top" secondItem="vjf-WR-iop" secondAttribute="bottom" constant="8" id="aek-pV-3YI"/>
@@ -292,6 +297,7 @@
                                             <constraint firstItem="fz5-df-9aL" firstAttribute="top" secondItem="9Im-jy-8XB" secondAttribute="bottom" constant="8" id="iQX-xm-Dxj"/>
                                             <constraint firstItem="9C1-Yt-YIm" firstAttribute="leading" secondItem="VZe-HV-1yk" secondAttribute="trailing" constant="35" id="jwU-Bn-wMH"/>
                                             <constraint firstItem="vjf-WR-iop" firstAttribute="top" secondItem="En7-Oq-XJc" secondAttribute="bottom" constant="8" id="k3i-VT-9kc"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9Im-jy-8XB" secondAttribute="trailing" constant="20" symbolic="YES" id="kVy-fe-JAD"/>
                                             <constraint firstItem="yHw-eO-Icg" firstAttribute="top" secondItem="lg9-Kt-vES" secondAttribute="bottom" constant="8" id="oxM-Wn-10z"/>
                                             <constraint firstItem="yHw-eO-Icg" firstAttribute="leading" secondItem="BKf-Vr-MCF" secondAttribute="leading" constant="20" id="pBb-Sl-tID"/>
                                             <constraint firstItem="9Im-jy-8XB" firstAttribute="top" secondItem="yHw-eO-Icg" secondAttribute="bottom" constant="8" id="pjq-Iu-V0G"/>

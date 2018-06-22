@@ -22,6 +22,8 @@
 		93DB5CFE20DB75710060CDFD /* FavouriteContactsTableRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93DB5CFC20DB75710060CDFD /* FavouriteContactsTableRowCell.xib */; };
 		93DB5D0120DB78690060CDFD /* FavouriteContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CFF20DB78690060CDFD /* FavouriteContactCell.swift */; };
 		93DB5D0220DB78690060CDFD /* FavouriteContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93DB5D0020DB78690060CDFD /* FavouriteContactCell.xib */; };
+		93DB5D0420DC6A710060CDFD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5D0320DC6A710060CDFD /* User.swift */; };
+		93DB5D0720DC6F2E0060CDFD /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5D0620DC6F2E0060CDFD /* FirebaseReference.swift */; };
 		A2A9D05820908A2EFC500DC0 /* Pods_Empower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DB1A4C5FAD536190DF9E1C /* Pods_Empower.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,8 @@
 		93DB5CFC20DB75710060CDFD /* FavouriteContactsTableRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteContactsTableRowCell.xib; sourceTree = "<group>"; };
 		93DB5CFF20DB78690060CDFD /* FavouriteContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteContactCell.swift; sourceTree = "<group>"; };
 		93DB5D0020DB78690060CDFD /* FavouriteContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteContactCell.xib; sourceTree = "<group>"; };
+		93DB5D0320DC6A710060CDFD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		93DB5D0620DC6F2E0060CDFD /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		93DB5CA920D8A6680060CDFD /* Empower */ = {
 			isa = PBXGroup;
 			children = (
+				93DB5D0520DC6A760060CDFD /* Model */,
 				93DB5CBC20D8AF490060CDFD /* Controller */,
 				93DB5CBD20D8AF580060CDFD /* View */,
 				93DB5CBE20D8AF620060CDFD /* Supporting Files */,
@@ -140,6 +145,15 @@
 				93DB5CC320D8C6A40060CDFD /* UITextFieldExtension.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93DB5D0520DC6A760060CDFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93DB5D0320DC6A710060CDFD /* User.swift */,
+				93DB5D0620DC6F2E0060CDFD /* FirebaseReference.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,11 +280,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93DB5D0720DC6F2E0060CDFD /* FirebaseReference.swift in Sources */,
 				93DB5CF920DB73BA0060CDFD /* ContactCell.swift in Sources */,
 				93DB5CC420D8C6A40060CDFD /* UITextFieldExtension.swift in Sources */,
 				93DB5CAD20D8A6680060CDFD /* LogInViewController.swift in Sources */,
 				93DB5CAB20D8A6680060CDFD /* AppDelegate.swift in Sources */,
 				93DB5CF220DB70A80060CDFD /* ContactsTableViewController.swift in Sources */,
+				93DB5D0420DC6A710060CDFD /* User.swift in Sources */,
 				93DB5CFD20DB75710060CDFD /* FavouriteContactsTableRowCell.swift in Sources */,
 				93DB5D0120DB78690060CDFD /* FavouriteContactCell.swift in Sources */,
 				93DB5CC220D8B0F60060CDFD /* RegisterViewController.swift in Sources */,

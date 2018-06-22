@@ -85,9 +85,9 @@ class RegisterViewController: UIViewController {
                     
                 self.present(alert, animated: true)
             } else {
-                let user: [String: String] = ["first_name": self.firstNameTextField?.text ?? "", "last_name": self.lastNameTextField?.text ?? "", "username": self.usernameTextField?.text ?? "", "email": self.emailTextField?.text ?? "", "date_of_birth": self.dateOfBirthTextField?.text ?? ""]
+                let newUser: User = User(uid: result!.user.uid, username: self.usernameTextField?.text ?? "", firstName: self.firstNameTextField?.text ?? "", lastName: self.lastNameTextField?.text ?? "", profileImage: nil, email: self.emailTextField?.text ?? "")
                 
-                self.userDB.childByAutoId().setValue(user)
+                newUser.save()
                 
                 let alert = UIAlertController(title: "You're Registered!", message: "", preferredStyle: .alert)
                 
