@@ -42,16 +42,19 @@ class LogInViewController: UIViewController {
         SVProgressHUD.show()
         
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
-            SVProgressHUD.dismiss()
             
             if error != nil {
                 let alert = UIAlertController(title: "Oops!", message: error?.localizedDescription, preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                
+
                 self.present(alert, animated: true)
+                SVProgressHUD.dismiss()
             } else {
-                self.performSegue(withIdentifier: "goToContacts", sender: self)
+                CurrentUser.loadUser(uid: (result?.user.uid)!) {
+                    SVProgressHUD.dismiss()
+                    self.performSegue(withIdentifier: "goToContacts", sender: self)
+                }
             }
         }
     }
