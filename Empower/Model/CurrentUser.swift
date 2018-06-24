@@ -20,7 +20,7 @@ class CurrentUser {
 //                print("KEY: \((snap as! DataSnapshot).key)")
 //                print("USERNAME: \((snap as! DataSnapshot).value)")
 //
-//                guard let dict = (snap as! DataSnapshot) as! [String: String] else {fatalError()}
+//                guard let dict = (snap as! DataSnapshot).value as? [String: String] else {fatalError()}
 //            }
 //        }
         

@@ -385,7 +385,7 @@
                     <tabBarItem key="tabBarItem" title="Contacts" id="eaM-5z-d8z"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="lda-1d-Ya0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="93"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -420,7 +420,13 @@
                             <outlet property="delegate" destination="5gv-5V-jlM" id="00A-Yh-T9X"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Contacts" id="NXf-4d-MBv"/>
+                    <navigationItem key="navigationItem" title="Contacts" id="NXf-4d-MBv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TcA-HW-Xiu">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="5gv-5V-jlM" id="sYW-LP-sVd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2V9-D2-gF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -433,7 +439,7 @@
                     <tabBarItem key="tabBarItem" title="Messages" id="Ag9-fi-Dc5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Wr2-Ea-qMe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="93"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import SVProgressHUD
 
 class ContactsTableViewController: UITableViewController {
 
     let categories = ["Favourites", "Contacts"]
-    let contacts = ["Aaron Zhong", "Bobby", "Tarantino", "Bill Gates", "Richard Hendrix"]
+    var contacts = ["Aaron Zhong", "Bobby", "Tarantino", "Bill Gates", "Richard Hendrix"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +82,53 @@ class ContactsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Add Contact", message: "", preferredStyle: .alert)
+        var textField: UITextField?
+        
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Contact email"
+            textField = alertTextField
+        }
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Send Request", style: .default, handler: { (action) in
+                // Send contact request
+            
+                // Check email exists
+                Database.database().reference().child("users").queryOrdered(byChild: "email").queryEqual(toValue: textField?.text).observe(.value) { (snapshot) in
+                    if snapshot.childrenCount == 0 {
+                        // Email doesn't exist
+                        SVProgressHUD.showError(withStatus: "Email not found")
+                    } else {
+                        for snap in snapshot.children {
+                            guard let dict = (snap as! DataSnapshot).value as? [String: String] else {fatalError()}
+                            
+                            // If exists, add requested contact uid to current user's contact list with status = REQUESTED_SENT. If doesn't exist show error msg
+                            let currentUserUid = (CurrentUser.currentUser?.uid)!
+                            let newContactUid = dict["uid"]!
+                            let newContact = ["contact-uid": newContactUid, "favourite": false, "status": "REQUEST_SENT"] as [String : Any]
+                            Database.database().reference().child("contacts/\(currentUserUid)").child(newContactUid).setValue(newContact)
+                            
+                            // Add self to requested persons contact list with status = REQUEST_RECEIVED
+                            let selfContact = ["contact-uid": currentUserUid, "favourite": false, "status": "REQUEST_RECIEVED"] as [String : Any]
+                            Database.database().reference().child("contacts/\(newContactUid)").child(currentUserUid).setValue(selfContact)
+                        }
+                    }
+                }
+            
+            SVProgressHUD.showSuccess(withStatus: "Request sent")
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    //    func loadContacts() {
+//        Database.database().reference().child("users").queryEqual(toValue: "<#T##Any?#>", childKey: <#T##String?#>)
+//    }
 
     /*
     // Override to support conditional editing of the table view.
