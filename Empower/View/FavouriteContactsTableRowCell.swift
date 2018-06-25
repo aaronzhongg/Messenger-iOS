@@ -11,7 +11,7 @@ import UIKit
 class FavouriteContactsTableRowCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var contactsCollectionView: UICollectionView!
-    let favourites = ["Stephanie", "Mr. Mosby", "Steve Jobs", "Boy", "Molly"]
+    var favourites: [Contact]?
     
     let icons = ["teacher", "gentleman", "writer", "worker", "cashier"]
     
@@ -31,16 +31,26 @@ class FavouriteContactsTableRowCell: UITableViewCell, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return favourites.count
+        return favourites?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let favourite = favourites?[indexPath.row] else {fatalError()}
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavouriteContactCell", for: indexPath) as! FavouriteContactCell
         
-        cell.contactNameLabel.text = favourites[indexPath.row]
+        cell.contactNameLabel.text = favourite.fullName
         cell.contactImageView.image = UIImage(named: icons[indexPath.row])
         
         return cell
     }
     
+}
+
+// MARK: - FavouritedContactsDelegate
+extension FavouriteContactsTableRowCell: FavouritedContactsDelegate {
+    func updateFavouriteContacts(_ favourites: [Contact]) {
+        self.favourites = favourites
+        contactsCollectionView.reloadData()
+    }
 }

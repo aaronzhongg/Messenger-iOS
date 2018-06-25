@@ -10,10 +10,16 @@ import UIKit
 import FirebaseDatabase
 import SVProgressHUD
 
+protocol FavouritedContactsDelegate {
+    func updateFavouriteContacts(_ favourites: [Contact])
+}
+
 class ContactsTableViewController: UITableViewController {
 
     let categories = ["Favourites", "Contacts"]
-    var contacts = ["Aaron Zhong", "Bobby", "Tarantino", "Bill Gates", "Richard Hendrix"]
+    var contacts: [Contact] = [Contact]()
+    
+    var favouritesDelegate: FavouritedContactsDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,8 @@ class ContactsTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "FavouriteContactsTableRowCell", bundle: nil), forCellReuseIdentifier: "FavouriteContactsRowCell")
         
         tableView.register(UINib(nibName: "ContactCell", bundle: nil), forCellReuseIdentifier: "ContactCell")
+        
+        loadContacts()
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,12 +64,13 @@ class ContactsTableViewController: UITableViewController {
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteContactsRowCell") as! FavouriteContactsTableRowCell
+            favouritesDelegate = cell
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactCell
             
-            cell.contactNameLabel.text = contacts[indexPath.row]
+            cell.contactNameLabel.text = contacts[indexPath.row].fullName
             return cell
         }
         
@@ -122,9 +131,25 @@ class ContactsTableViewController: UITableViewController {
         performSegue(withIdentifier: "goToRequests", sender: self)
     }
     
-    //    func loadContacts() {
-//        Database.database().reference().child("users").queryEqual(toValue: "<#T##Any?#>", childKey: <#T##String?#>)
-//    }
+    func loadContacts() {
+        DatabaseReference.contacts(uid: (CurrentUser.currentUser?.uid)!).reference().observeSingleEvent(of: .value) { (snapshot) in
+            var favourites: [Contact] = [Contact]()
+            
+            for snap in snapshot.children {
+                guard let contactsDict = (snap as! DataSnapshot).value as? [String: Any] else {fatalError()}
+                
+                let contact = Contact(uid: contactsDict["uid"] as! String, favourite: contactsDict["favourite"] as! Bool, status: Status.element(at: contactsDict["status"] as! Int)!, fullName: contactsDict["fullName"] as! String)
+                
+                if contact.favourite == true {
+                    favourites.append(contact)
+                } else {
+                    self.contacts.append(contact)
+                }
+            }
+            self.favouritesDelegate?.updateFavouriteContacts(favourites)
+            self.tableView.reloadData()
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
