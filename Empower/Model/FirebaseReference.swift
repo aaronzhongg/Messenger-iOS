@@ -13,6 +13,7 @@ import FirebaseStorage
 enum DatabaseReference {
     case root
     case users(uid: String)
+    case contacts(uid: String)
     
     func reference() -> FirebaseDatabase.DatabaseReference {
         switch self {
@@ -33,6 +34,8 @@ enum DatabaseReference {
             return ""
         case .users(let uid):
             return "users/\(uid)"
+        case .contacts(let uid):
+            return "contacts/\(uid)"
         }
     }
 }

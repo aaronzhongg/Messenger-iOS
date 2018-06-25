@@ -107,20 +107,12 @@ class ContactsTableViewController: UITableViewController {
                         for snap in snapshot.children {
                             guard let dict = (snap as! DataSnapshot).value as? [String: String] else {fatalError()}
                             
-                            // If exists, add requested contact uid to current user's contact list with status = REQUESTED_SENT. If doesn't exist show error msg
-                            let currentUserUid = (CurrentUser.currentUser?.uid)!
-                            let newContactUid = dict["uid"]!
-                            let newContact = ["contact-uid": newContactUid, "favourite": false, "status": "REQUEST_SENT"] as [String : Any]
-                            Database.database().reference().child("contacts/\(currentUserUid)").child(newContactUid).setValue(newContact)
-                            
-                            // Add self to requested persons contact list with status = REQUEST_RECEIVED
-                            let selfContact = ["contact-uid": currentUserUid, "favourite": false, "status": "REQUEST_RECIEVED"] as [String : Any]
-                            Database.database().reference().child("contacts/\(newContactUid)").child(currentUserUid).setValue(selfContact)
+                            CurrentUser.addContact(uid: dict["uid"]!)
                         }
+                        
+                        SVProgressHUD.showSuccess(withStatus: "Request sent")
                     }
                 }
-            
-            SVProgressHUD.showSuccess(withStatus: "Request sent")
         }))
         
         self.present(alert, animated: true)

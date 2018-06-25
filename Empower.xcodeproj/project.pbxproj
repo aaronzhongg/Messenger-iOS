@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9363F25420E060CC00212BF8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363F25320E060CC00212BF8 /* Contact.swift */; };
 		93DB5CAB20D8A6680060CDFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CAA20D8A6680060CDFD /* AppDelegate.swift */; };
 		93DB5CAD20D8A6680060CDFD /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CAC20D8A6680060CDFD /* LogInViewController.swift */; };
 		93DB5CB020D8A6680060CDFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DB5CAE20D8A6680060CDFD /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		3F08A70766BEB5E58741D842 /* Pods-Empower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Empower/Pods-Empower.debug.xcconfig"; sourceTree = "<group>"; };
 		723694AADBFA12EEB33D9A48 /* Pods-Empower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empower.release.xcconfig"; path = "Pods/Target Support Files/Pods-Empower/Pods-Empower.release.xcconfig"; sourceTree = "<group>"; };
 		85DB1A4C5FAD536190DF9E1C /* Pods_Empower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Empower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9363F25320E060CC00212BF8 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		93DB5CA720D8A6680060CDFD /* Empower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Empower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DB5CAA20D8A6680060CDFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93DB5CAC20D8A6680060CDFD /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				93DB5D0320DC6A710060CDFD /* User.swift */,
 				93DB5D0620DC6F2E0060CDFD /* FirebaseReference.swift */,
 				93DB5D0820DCB67A0060CDFD /* CurrentUser.swift */,
+				9363F25320E060CC00212BF8 /* Contact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9363F25420E060CC00212BF8 /* Contact.swift in Sources */,
 				93DB5D0720DC6F2E0060CDFD /* FirebaseReference.swift in Sources */,
 				93DB5CF920DB73BA0060CDFD /* ContactCell.swift in Sources */,
 				93DB5D0920DCB67A0060CDFD /* CurrentUser.swift in Sources */,
