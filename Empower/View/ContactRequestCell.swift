@@ -8,9 +8,16 @@
 
 import UIKit
 
+protocol ContactRequestResponseDelegate {
+    func declineRequest(_ sender: ContactRequestCell)
+    func acceptRequest(_ sender: ContactRequestCell)
+}
+
 class ContactRequestCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
+    
+    var delegate: ContactRequestResponseDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,9 +31,11 @@ class ContactRequestCell: UITableViewCell {
     }
     
     @IBAction func declineButtonPressed(_ sender: UIButton) {
+        delegate?.declineRequest(self)
     }
     
     @IBAction func acceptButtonPressed(_ sender: UIButton) {
+        delegate?.acceptRequest(self)
     }
     
 }
