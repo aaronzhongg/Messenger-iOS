@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import SVProgressHUD
+import FirebaseAuth
 
 protocol FavouritedContactsDelegate {
     func updateFavouriteContacts(_ favourites: [Contact])
@@ -151,6 +152,14 @@ class ContactsTableViewController: UITableViewController {
         }
     }
 
+    @IBAction func logOutButtonPressed(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+            self.dismiss(animated: true)
+        } catch {
+            print(error)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -454,11 +455,18 @@
                                 <action selector="requestsButtonPressed:" destination="5gv-5V-jlM" id="DJB-Db-9Cu"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TcA-HW-Xiu">
-                            <connections>
-                                <action selector="addButtonPressed:" destination="5gv-5V-jlM" id="sYW-LP-sVd"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="TcA-HW-Xiu">
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="5gv-5V-jlM" id="sYW-LP-sVd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Log Out" id="gjs-oO-a50">
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="5gv-5V-jlM" id="orU-iL-tvu"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <segue destination="igQ-Gx-eV8" kind="show" identifier="goToRequests" id="yWl-5c-gNx"/>
