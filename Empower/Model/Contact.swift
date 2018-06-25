@@ -28,18 +28,21 @@ class Contact {
     var uid: String
     var favourite: Bool
     var status: Status
+    var fullName: String
     
-    init(uid: String, favourite: Bool, status: Status) {
+    init(uid: String, favourite: Bool, status: Status, fullName: String) {
         self.uid = uid
         self.favourite = favourite
         self.status = status
+        self.fullName = fullName
     }
     
     func toDictionary() -> [String: Any] {
         return [
             "uid": uid,
             "favourite": favourite,
-            "status": status.rawValue
+            "status": status.rawValue,
+            "fullName": fullName
         ]
     }
     

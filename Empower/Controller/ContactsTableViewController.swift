@@ -107,7 +107,7 @@ class ContactsTableViewController: UITableViewController {
                         for snap in snapshot.children {
                             guard let dict = (snap as! DataSnapshot).value as? [String: String] else {fatalError()}
                             
-                            CurrentUser.addContact(uid: dict["uid"]!)
+                            CurrentUser.addContact(uid: dict["uid"]!, name: "\(dict["firstName"]!) \(dict["lastName"]!)")
                         }
                         
                         SVProgressHUD.showSuccess(withStatus: "Request sent")
@@ -116,6 +116,10 @@ class ContactsTableViewController: UITableViewController {
         }))
         
         self.present(alert, animated: true)
+    }
+    
+    @IBAction func requestsButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "goToRequests", sender: self)
     }
     
     //    func loadContacts() {

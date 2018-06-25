@@ -37,8 +37,8 @@ class User {
     }
     
     func addContact(contact: Contact) {
-        DatabaseReference.contacts(uid: uid).reference().setValue(contact.toDictionary())
-        DatabaseReference.contacts(uid: contact.uid).reference().setValue(Contact(uid: uid, favourite: false, status: Status.REQUEST_RECEIVED).toDictionary())
+        DatabaseReference.contacts(uid: uid).reference().child(contact.uid).setValue(contact.toDictionary())
+        DatabaseReference.contacts(uid: contact.uid).reference().child(uid).setValue(Contact(uid: uid, favourite: false, status: Status.REQUEST_RECEIVED, fullName: "\(firstName) \(lastName)").toDictionary())
     }
     
     func toDictionary() -> [String: Any] {

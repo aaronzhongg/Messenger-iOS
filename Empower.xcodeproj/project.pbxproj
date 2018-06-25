@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9363F25420E060CC00212BF8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363F25320E060CC00212BF8 /* Contact.swift */; };
+		9363F25620E097BE00212BF8 /* RequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363F25520E097BE00212BF8 /* RequestsTableViewController.swift */; };
+		9363F25920E0996C00212BF8 /* ContactRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363F25720E0996C00212BF8 /* ContactRequestCell.swift */; };
+		9363F25A20E0996C00212BF8 /* ContactRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9363F25820E0996C00212BF8 /* ContactRequestCell.xib */; };
 		93DB5CAB20D8A6680060CDFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CAA20D8A6680060CDFD /* AppDelegate.swift */; };
 		93DB5CAD20D8A6680060CDFD /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB5CAC20D8A6680060CDFD /* LogInViewController.swift */; };
 		93DB5CB020D8A6680060CDFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DB5CAE20D8A6680060CDFD /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 		723694AADBFA12EEB33D9A48 /* Pods-Empower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empower.release.xcconfig"; path = "Pods/Target Support Files/Pods-Empower/Pods-Empower.release.xcconfig"; sourceTree = "<group>"; };
 		85DB1A4C5FAD536190DF9E1C /* Pods_Empower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Empower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9363F25320E060CC00212BF8 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		9363F25520E097BE00212BF8 /* RequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewController.swift; sourceTree = "<group>"; };
+		9363F25720E0996C00212BF8 /* ContactRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequestCell.swift; sourceTree = "<group>"; };
+		9363F25820E0996C00212BF8 /* ContactRequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactRequestCell.xib; sourceTree = "<group>"; };
 		93DB5CA720D8A6680060CDFD /* Empower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Empower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DB5CAA20D8A6680060CDFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93DB5CAC20D8A6680060CDFD /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 				93DB5CAC20D8A6680060CDFD /* LogInViewController.swift */,
 				93DB5CC120D8B0F60060CDFD /* RegisterViewController.swift */,
 				93DB5CF120DB70A80060CDFD /* ContactsTableViewController.swift */,
+				9363F25520E097BE00212BF8 /* RequestsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,6 +144,8 @@
 				93DB5CFC20DB75710060CDFD /* FavouriteContactsTableRowCell.xib */,
 				93DB5CFF20DB78690060CDFD /* FavouriteContactCell.swift */,
 				93DB5D0020DB78690060CDFD /* FavouriteContactCell.xib */,
+				9363F25720E0996C00212BF8 /* ContactRequestCell.swift */,
+				9363F25820E0996C00212BF8 /* ContactRequestCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,6 +235,7 @@
 				93DB5CB520D8A66C0060CDFD /* LaunchScreen.storyboard in Resources */,
 				93DB5CC620D9BB710060CDFD /* GoogleService-Info.plist in Resources */,
 				93DB5CFE20DB75710060CDFD /* FavouriteContactsTableRowCell.xib in Resources */,
+				9363F25A20E0996C00212BF8 /* ContactRequestCell.xib in Resources */,
 				93DB5CB220D8A66B0060CDFD /* Assets.xcassets in Resources */,
 				93DB5CB020D8A6680060CDFD /* Main.storyboard in Resources */,
 				93DB5CFA20DB73BA0060CDFD /* ContactCell.xib in Resources */,
@@ -296,7 +306,9 @@
 				93DB5CF220DB70A80060CDFD /* ContactsTableViewController.swift in Sources */,
 				93DB5D0420DC6A710060CDFD /* User.swift in Sources */,
 				93DB5CFD20DB75710060CDFD /* FavouriteContactsTableRowCell.swift in Sources */,
+				9363F25620E097BE00212BF8 /* RequestsTableViewController.swift in Sources */,
 				93DB5D0120DB78690060CDFD /* FavouriteContactCell.swift in Sources */,
+				9363F25920E0996C00212BF8 /* ContactRequestCell.swift in Sources */,
 				93DB5CC220D8B0F60060CDFD /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

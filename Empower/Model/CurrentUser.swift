@@ -34,8 +34,8 @@ class CurrentUser {
         }
     }
     
-    static func addContact(uid: String) {
-        let newContact = Contact(uid: uid, favourite: false, status: Status.REQUEST_SENT)
+    static func addContact(uid: String, name: String) {
+        let newContact = Contact(uid: uid, favourite: false, status: Status.REQUEST_SENT, fullName: name)
         
         if let user = currentUser {
             user.addContact(contact: newContact)

@@ -397,6 +397,34 @@
             </objects>
             <point key="canvasLocation" x="2789.5999999999999" y="-194.33497536945814"/>
         </scene>
+        <!--Requests-->
+        <scene sceneID="XoF-Gy-cHv">
+            <objects>
+                <tableViewController storyboardIdentifier="RequestsTableVC" title="Requests" useStoryboardIdentifierAsRestorationIdentifier="YES" id="igQ-Gx-eV8" customClass="RequestsTableViewController" customModule="Empower" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vfL-6l-0Ll">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oOR-3y-iVg">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oOR-3y-iVg" id="787-8E-55H">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="igQ-Gx-eV8" id="cYd-v6-hbV"/>
+                            <outlet property="delegate" destination="igQ-Gx-eV8" id="sbT-sC-ne4"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MgM-yH-hDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3729" y="-919"/>
+        </scene>
         <!--Contacts-->
         <scene sceneID="luV-c6-eg5">
             <objects>
@@ -421,12 +449,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="NXf-4d-MBv">
+                        <barButtonItem key="leftBarButtonItem" title="Requests" id="DJS-wJ-pi4">
+                            <connections>
+                                <action selector="requestsButtonPressed:" destination="5gv-5V-jlM" id="DJB-Db-9Cu"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TcA-HW-Xiu">
                             <connections>
                                 <action selector="addButtonPressed:" destination="5gv-5V-jlM" id="sYW-LP-sVd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="igQ-Gx-eV8" kind="show" identifier="goToRequests" id="yWl-5c-gNx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2V9-D2-gF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
