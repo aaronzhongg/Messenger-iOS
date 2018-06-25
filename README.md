@@ -6,10 +6,10 @@ Currently implemented
 - Registering and login authentication using Firebase
 - Persist user data into firebase db
 - UI for contacts page with custom table view layout
+- Add contacts by email and persist into firebase db
+- Accept or decline contact requests
 
 To do
-- Add contacts by username/email and persist into firebase db
-- Accept contact requests
 - Open contact profile 
 - Send instant text messages to contacts
 - Profile settings page (Profile picture, username, sign out etc.)
