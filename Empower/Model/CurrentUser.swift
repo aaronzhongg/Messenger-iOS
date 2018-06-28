@@ -29,8 +29,9 @@ class CurrentUser {
             guard let userDict = snapshot.value as? [String: Any] else {fatalError()}
 
             currentUser = User(uid: snapshot.key, username: userDict["username"] as! String, firstName: userDict["firstName"] as! String, lastName: userDict["lastName"] as! String, profileImage: nil, email: userDict["email"] as! String)
-            
-             completion()
+            currentUser?.loadContacts {
+                completion()
+            }
         }
     }
     
