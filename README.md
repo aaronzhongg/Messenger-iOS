@@ -1,4 +1,4 @@
-# Messenger-iOS (Work in progress)
+# Messenger-iOS
 
 A simple messenger application
 
@@ -16,6 +16,6 @@ To do
 - Stay logged in on device
 - Push notifications (contact request, message recieved) 
 
-<img src="https://media.giphy.com/media/9zXwYJt2Yp3XXk8rnQ/giphy.gif" width="350">
+<img src="./Messenger-iOS.gif" alt="Messenger App Demo" height="600">
 
 Icons: https://www.flaticon.com/packs/profession-avatars
